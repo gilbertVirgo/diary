@@ -22,7 +22,7 @@
             This is a really cool new diary tool man. You should check it out.
         </p>
         <hr />
-        <form>
+        <form id="login-form">
             <label class="sans-serif">Email</label>
             <input class="sans-serif" type="email" name="email" />
             <label class="sans-serif">Password</label>
@@ -30,6 +30,18 @@
             <input class="sans-serif" type="submit" value="Login" />
         </form>
     </main>
+
+    <script>
+        $(document).ready(function () {
+            $("#login-form").on("submit", () => {
+                const email = $("[name='email']")
+
+                $.post("login", {
+                    email: 
+                })
+            });
+        });
+    </script>
 </body>
 
 </html>
