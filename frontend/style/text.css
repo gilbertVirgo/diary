@@ -1,0 +1,7 @@
+/* Modern */
+.sans-serif { font-family: "Source Sans Pro", sans-serif }
+/* Old */
+.serif { font-family: "Merriweather", serif }
+
+.text-red { color: red }
+.text-gray, .text-grey { color: gray }

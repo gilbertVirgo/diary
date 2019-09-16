@@ -6,6 +6,6 @@
     box-sizing: border-box;
 }
 
-.container .small {
-    max-width: 500px;
+.container.small {
+    max-width: 500px !important;
 }
