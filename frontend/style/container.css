@@ -13,3 +13,7 @@
 .inline-block{
     display: inline-block;
 }
+
+* {
+    outline: none;
+}

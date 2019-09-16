@@ -5,6 +5,7 @@
 @import "./text.css";
 @import "./form.css";
 @import "./container.css";
+@import "./entry.css";
 
 hr {
     height: 1px;

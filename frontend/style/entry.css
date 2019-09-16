@@ -1,0 +1,23 @@
+.entry-main-container{
+    min-height: 350px;
+}
+
+.entry-header-container{
+    position: relative;
+}
+
+#save-button{
+    width: 70px;
+    float: right;
+    clear: both;
+
+}
+#back-button{
+    width: 70px;
+    float: left;
+    clear: both;
+
+}
+.button-container{
+    clear: both;
+}
