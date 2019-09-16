@@ -3,15 +3,18 @@ form label, form input {
     margin: 0 0 10px;
 }
 
-input[type="text"], 
-input[type="email"], 
-input[type="password"], 
-input[type="button"], 
-input[type="submit"], 
-button {
-    padding: 5px 8px;
+input {
+    padding: 10px;
     box-sizing: border-box;
     border-radius: 5px;
+    outline: none;
+    transition: border 0.3s;
+    width: 100%;
+    font-size: 16px;
+}
+
+input:not([type="submit"], [type="button"], button):focus {
+    border: 3px solid darkslategrey;
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
@@ -23,4 +26,5 @@ input[type="button"], input[type="submit"], button, .button {
     appearance: none;
     background-color: darkslategrey;
     color: white;
+    font-weight: 700;
 }

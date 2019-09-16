@@ -5,3 +5,7 @@
     padding: 10px;
     box-sizing: border-box;
 }
+
+.container .small {
+    max-width: 500px;
+}
