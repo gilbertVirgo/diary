@@ -1,0 +1,26 @@
+form label, form input {
+    display: block;
+    margin: 0 0 10px;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="button"], 
+input[type="submit"], 
+button {
+    padding: 5px 8px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    border: 1px solid lightgray;
+    
+}
+
+input[type="button"], input[type="submit"], button, .button {
+    appearance: none;
+    background-color: darkslategrey;
+    color: white;
+}
