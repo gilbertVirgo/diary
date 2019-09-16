@@ -1,6 +1,10 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700|Merriweather:400,700&display=swap');
 
+/* Imports */
+@import "./form.css";
+@import "./container.css";
+
 /* Modern */
 .sans-serif { font-family: "Comfortaa", sans-serif }
 /* Old */
