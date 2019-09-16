@@ -12,3 +12,7 @@ hr {
     background-color: lightgray;
     margin: 0 0 20px;
 }
+
+.center{
+    text-align: center;
+}

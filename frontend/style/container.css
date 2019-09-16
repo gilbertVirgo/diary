@@ -9,3 +9,7 @@
 .container.small {
     max-width: 500px !important;
 }
+
+.inline-block{
+    display: inline-block;
+}
