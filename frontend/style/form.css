@@ -27,3 +27,6 @@ input[type="button"], input[type="submit"], button, .button {
     color: white;
     font-weight: 700;
 }
+button{
+    border: none;
+}

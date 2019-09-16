@@ -15,15 +15,20 @@
 <body>
 
     <main class="container">
-        <header>
-            <h1 class="serif">Diary title</h1>
-        </header>
+        <header class="entry-header-container">
+            <div class="button-container">
+                <button id="save-button" class="sans-serif button">Save</button>
+                <button id="back-button" class="sans-serif button">Back</button>
 
+            </div>
+            <div>
+                <h1 class="serif">Diary title</h1>
+            </div>
+        </header>
         <p class="sans-serif">Date: <span class="sans-serif" id="dateP">dd/mm/yyyy</span></p>
         <hr>
-        <p class="sans-serif">Diary Content</p>
+        <div contenteditable class="sans-serif entry-main-container">Diary Content</div>
         <hr>
-        <button class="sans-serif">Save Diary</button>
 
     </main>
 </body>
