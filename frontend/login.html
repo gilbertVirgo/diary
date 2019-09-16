@@ -8,6 +8,7 @@
 
     <!-- JS -->
     <script src="js/jquery.js"></script>
+    <script src="js/axios.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="style/main.css" />
@@ -29,16 +30,27 @@
             <input class="sans-serif" type="password" name="password" />
             <input class="sans-serif" type="submit" value="Login" />
         </form>
+
+        <p id="error" class="text-red center">
+
+        </p>
     </main>
 
+    <script src="js/functions.js"></script>
     <script>
         $(document).ready(function () {
-            $("#login-form").on("submit", () => {
-                const email = $("[name='email']")
+            $("#login-form").on("submit", async () => {
+                const email = $("[name='email']").val();
+                const password = $("[name='password']").val();
 
-                $.post("login", {
-                    email: 
-                })
+                const { success, error, token } = await axios.post("/user/session", { email, password });
+
+                if (!error) {
+                    setToken(token);
+                    window.location.assign("home.html");
+                } else {
+                    setError(error);
+                }
             });
         });
     </script>
