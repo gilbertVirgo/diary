@@ -37,6 +37,18 @@
             <hr>
         </div>
     </main>
+    <script>
+        function getEntries() {
+            const url = "/entries"
+            $.get(url).done(function(data) {
+                console.log(data);
+            });
+        }
+
+        $(document).ready(function() {
+            
+        });
+    </script>
 </body>
 
 </html>
