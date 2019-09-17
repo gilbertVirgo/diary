@@ -1,3 +1,6 @@
+require("dotenv").config();
+
+const jwt = require("jsonwebtoken");
 const express = require("express");
 
 const router = express.Router();
@@ -18,11 +21,13 @@ const updateEntry = (current, props) => {
 
 const users = [
     {
+        "id": 59934545,
         "email": "tan@bir.com",
         "password": "password",
         "tokens": []
     },
     {
+        "id": 32490234,
         "email": "gil@bert.com",
         "password": "password",
         "tokens": []
@@ -50,19 +55,37 @@ const entries = [
     }
 ]
 
+router.get("/user/session/:token", ({params: {token}}, res) => {
+    const decoded = jwt.verify(token, process.env.SECRET);
+
+    const user = decoded && users.find(user => user.email === decoded.data.email);
+
+    if(user) {
+        if(user.tokens.includes(token)) {
+            res.status(200).json({success: true});
+        } else {
+            res.status(403).json({success: false, error: "Invalid token"});
+        }
+    } else {
+        res.status(401).json({success: false, error: "Absolute failure"});
+    }
+});
+
 router.post("/user/session", ({body: {email, password}}, res) => {
     const index = users.findIndex(user => user.email === email);
 
-    if(index > -1) {
-        if(users[index].password === password) {
-            console.log(true)
+    const user = (index > -1) && users[index];
 
-            const token = Date.now();
-            users[index].tokens.push(token);
+    if(user) {
+        if(user.password === password) {
+            const token = jwt.sign({
+                data: { id: user.id, email: user.email }
+            }, process.env.SECRET, { expiresIn: '1h' }); 
+
+            user.tokens.push(token);
 
             res.status(200).json({success: true, token});
         } else {
-            console.log(false);
             res.status(403).json({success: false, error: "Invalid username and password combination"});
         }
     } else {

@@ -1,16 +1,10 @@
+const redirect = () => window.location.assign("/login.html")
+
 $(function() {
-    try {
-        const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
 
-        if(!token) throw "No token";
-        else {
-            $.get("/user/session", {token}).fail(() => {
-                throw "Invalid token";
-            });
-        }
-    } catch(error) {
-        console.error(error);
-
-        window.location.assign("login.html");
+    if(!token) redirect();
+    else {
+        $.get(`/user/session/${token}`).done(data => console.log(data)).fail(redirect);
     }
 });
