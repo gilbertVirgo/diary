@@ -16,37 +16,35 @@
         <header class="serif">
             <h1>DevDiary</h1>
         </header>
-        <div>
-            <div class="sans-serif">
-                <p class="bold inline-block">Diary date</p>
-                <p class="bold inline-block">Diary title</p>
-                <p>Brief diary content</p>
-            </div>
-            <hr>
-            <div class="sans-serif">
-                <p class="bold inline-block">Diary date</p>
-                <p class="bold inline-block">Diary title</p>
-                <p>Brief diary content</p>
-            </div>
-            <hr>
-            <div class="sans-serif">
-                <p class="bold inline-block">Diary date</p>
-                <p class="bold inline-block">Diary title</p>
-                <p>Brief diary content</p>
-            </div>
-            <hr>
+        <div id="entries-container">
         </div>
     </main>
     <script>
-        function getEntries() {
+        function getEntries(next) {
             const url = "/entries"
-            $.get(url).done(function(data) {
-                console.log(data);
-            });
+
+            $.get(url).done(next);
+
+
         }
 
-        $(document).ready(function() {
-            
+        $(document).ready(function () {
+            getEntries(function (data) {
+                const entries = data.entries;
+
+                var entriesContainer = document.getElementById("entries-container");
+
+                for (var entry of entries) {
+                    entriesContainer.innerHTML += `
+                    <div class="sans-serif">
+                        <p class="bold inline-block">${entry.date}</p>
+                        <p class="bold inline-block">${entry.title}</p>
+                        <p>${entry.body}</p>
+                    </div>
+                    <hr/>
+                    `;
+                }
+            });
         });
     </script>
 </body>
