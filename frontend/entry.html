@@ -13,19 +13,23 @@
     
     <main class="container">
         <header class="entry-header-container">
-                <div class="button-container">
-                    <button id="save-button" class="sans-serif button">Save</button>
-                    <button id="back-button" class="sans-serif button">Back</button>
-
+                <div class="button-container-head">
+                    <button id="back-button" class="sans-serif button no-margin">Back</button>
+                    <button id="save-button" class="sans-serif button no-margin">Save</button>
                 </div>
                 <div>
                     <h1 class="serif">Diary title</h1>
                 </div> 
             </header>
-            <p class="sans-serif">Date: <span class="sans-serif" id="dateP">dd/mm/yyyy</span></p>
-            <hr>
+            <p class="sans-serif inline-block">Date: <span class="sans-serif" id="dateP">dd/mm/yyyy</span></p>
+            <div class="inline-block ">
+                <button class="editing-button">B</button>
+                <button class="editing-button">I</button>
+                <button class="editing-button button-container-main">U</button>
+
+            </div>
             <div contenteditable class="sans-serif entry-main-container">Diary Content</div>
-            <hr>
+            
         
     </main>
 </body>

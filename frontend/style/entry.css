@@ -1,5 +1,8 @@
 .entry-main-container{
     min-height: 350px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .entry-header-container{
@@ -9,15 +12,19 @@
 #save-button{
     width: 70px;
     float: right;
-    clear: both;
-
 }
+
 #back-button{
     width: 70px;
-    float: left;
-    clear: both;
-
 }
-.button-container{
-    clear: both;
+
+.no-margin{
+    margin: 0px;
+}
+.editing-button{
+    width: 30px;
+    padding: 10px;
+}
+.button-container-main{
+    float: right;
 }
