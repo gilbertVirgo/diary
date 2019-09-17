@@ -38,6 +38,7 @@ const entries = [
     {
         "id": 1234234,
         "title": "My First Entry!",
+        "date": "3 January 2019",
         "body": `
             <p>Dear diary,</p>
             <p>It was really fun today, I went to the park and stuff.</p>
@@ -47,6 +48,7 @@ const entries = [
     {
         "id": 2234425,
         "title": "First day at work",
+        "date": "4 January 2019",
         "body": `
             <p>Dear diary,</p>
             <p>First day of work was really boring man. I wish I could get back to freelancing. </p>
