@@ -1,5 +1,5 @@
 const setError = (target, message) => {
-    target.html(message);
+    target.text(message);
 }
 
 const setToken = token => {

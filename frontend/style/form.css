@@ -1,6 +1,6 @@
-label, input, button {
-    margin: 0 0 10px;
-}
+label, input, button { margin: 0 0 10px }
+
+label, input { display: block }
 
 input, button {
     padding: 10px;
